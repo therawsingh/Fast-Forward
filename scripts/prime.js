@@ -27,7 +27,7 @@ window.addEventListener("load", () => {
     const skipRecapButton = Array.from(
       document.querySelectorAll("button")
     ).find((button) => {
-      return button.textContent === "Skip Intro";
+      return button.textContent === "Skip Recap";
     });
 
     if (skipRecapButton) {
