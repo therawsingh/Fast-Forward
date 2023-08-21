@@ -27,7 +27,7 @@ window.addEventListener("load", () => {
     const continueWatchingButton = Array.from(
       document.querySelectorAll("button")
     ).find((button) => {
-      return button.textContent === "Continue Watching";
+      return button.textContent === "Continue watching";
     });
 
     if (continueWatchingButton) {
