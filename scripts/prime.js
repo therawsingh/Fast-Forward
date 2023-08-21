@@ -23,9 +23,22 @@ window.addEventListener("load", () => {
     }
   };
 
+  const clickSkipRecap = () => {
+    const skipRecapButton = Array.from(
+      document.querySelectorAll("button")
+    ).find((button) => {
+      return button.textContent === "Skip Intro";
+    });
+
+    if (skipRecapButton) {
+      skipRecapButton.click();
+    }
+  };
+
   const observer = new MutationObserver(() => {
     clickSkipButton();
     clickSkipIntro();
+    clickSkipRecap();
   });
 
   observer.observe(document.body, {
@@ -35,4 +48,5 @@ window.addEventListener("load", () => {
 
   clickSkipButton();
   clickSkipIntro();
+  clickSkipRecap();
 });
