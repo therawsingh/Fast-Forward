@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Fast Forward",
-  "description": "Automatically clicks on the 'Next Episode' button on Netflix, Prime, Hotstar",
+  "description": "A Multi-utility extension which helps you binge watch your favourite shows ion your favourite platforms (Netflix, Prime, Disney+ Hotstar, Youtube, Twitch)",
   "permissions": ["activeTab"],
   "version": "1.0",
   "content_scripts": [
