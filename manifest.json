@@ -8,6 +8,18 @@
     {
       "js": ["scripts/netflix.js"],
       "matches": ["https://www.netflix.com/*"]
+    },
+    {
+      "js": ["scripts/prime.js"],
+      "matches": ["https://www.primevideo.com/*"]
+    },
+    {
+      "js": ["scripts/youtube.js"],
+      "matches": ["https://www.youtube.com/*"]
+    },
+    {
+      "js": ["scripts/disney.js"],
+      "matches": ["https://www.hotstar.com/*"]
     }
   ]
 }

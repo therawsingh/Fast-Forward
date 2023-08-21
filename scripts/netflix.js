@@ -23,9 +23,35 @@ window.addEventListener("load", () => {
     }
   };
 
+  const clickContinueWatching = () => {
+    const continueWatchingButton = Array.from(
+      document.querySelectorAll("button")
+    ).find((button) => {
+      return button.textContent === "Continue Watching";
+    });
+
+    if (continueWatchingButton) {
+      continueWatchingButton.click();
+    }
+  };
+
+    const clickSkipRecap = () => {
+      const skipRecapButton = Array.from(
+        document.querySelectorAll("button")
+      ).find((button) => {
+        return button.textContent === "Skip Recap";
+      });
+
+      if (skipRecapButton) {
+        skipRecapButton.click();
+      }
+    };
+
   const observer = new MutationObserver(() => {
     clickNextButton();
     clickSkipIntro();
+    clickContinueWatching();
+    clickSkipRecap();
   });
 
   observer.observe(document.body, {
@@ -35,4 +61,6 @@ window.addEventListener("load", () => {
 
   clickNextButton();
   clickSkipIntro();
+  clickContinueWatching();
+  clickSkipRecap();
 });
