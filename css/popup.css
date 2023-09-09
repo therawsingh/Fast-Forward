@@ -1,12 +1,57 @@
-body{
+body {
     background: #171717;
     color: white;
-    height: 600px;
+    height: 680px;
     width: 200px;
     font-size: medium;
 }
 
-body::-webkit-scrollbar{
+body::-webkit-scrollbar {
     display: none;
-  }
+}
 
+.image{
+    text-align: center;
+}
+
+img{
+    max-width: 70%;
+    height: auto;
+}
+
+button {
+    height: 2rem;
+    background-color: #d21f3c;
+    border: none;
+    color: #e8e4c9;;
+    font-weight: bold;
+    font-size: medium;
+}
+button:hover{
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.popup {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+h3{
+    margin-left: 1rem;
+    color: #d21f3c;
+}
+
+label{
+    cursor: pointer;
+}
+
+input[type="checkbox"]{
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked{
+    accent-color: #d21f3c;
+}
