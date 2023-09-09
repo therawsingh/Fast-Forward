@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Binge It",
-  "description": "An extension which helps you binge your favourite shows on : Netflix, Prime, Disney+ Hotstar, Youtube, Twitch",
+  "description": "Binge Away on Netflix, Prime, Disney+ Hotstar, Youtube, Twitch (Auto clicks annoying buttons like Next Episode, Skip Recap etc.)",
   "permissions": ["activeTab", "storage", "background"],
   "version": "1.0",
   "icons": {
