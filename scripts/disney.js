@@ -1,4 +1,13 @@
 window.addEventListener("load", () => {
+
+  let toggleSkipRecapD, toggleSkipIntroD, toggleNextEpisodeD;
+
+  chrome.storage.sync.get(["toggleSkipRecapD", "toggleSkipIntroD", "toggleNextEpisodeD"], (data) => {
+    toggleSkipRecapD = data.toggleSkipRecapD;
+    toggleSkipIntroD = data.toggleSkipIntroD;
+    toggleNextEpisodeD = data.toggleNextEpisodeD;
+  });
+
   const clickSkipIntroButton = () => {
     const skipIntroButton = Array.from(
       document.querySelectorAll("button")
@@ -6,8 +15,16 @@ window.addEventListener("load", () => {
       return button.textContent === "Skip Intro";
     });
 
-    if (skipIntroButton) {
+    if (skipIntroButton && toggleSkipIntroD) {
       skipIntroButton.click();
+    }
+  };
+
+  const clickSkipRecapButton = () => {
+    const skipRecapButton = document.querySelector("#page-container > div > div:nth-child(1) > div:nth-child(1) > div._2SCTjm_Vu5PRTQlmfSP68c > div > div:nth-child(1) > div._1yXUbimyCTMGF9cUlMJN0k > div._17OcmvacBhtBIc8UlFWr44.hWMwKvUSl80u9L3r6hj7Z > div > button > span > span")
+
+    if (skipRecapButton && toggleSkipRecapD) {
+      skipRecapButton.click();
     }
   };
 
@@ -16,7 +33,7 @@ window.addEventListener("load", () => {
       "#page-container > div > div:nth-child(1) > div:nth-child(1) > div > div > div:nth-child(1) > div._1yXUbimyCTMGF9cUlMJN0k > div._17OcmvacBhtBIc8UlFWr44._3hNFbJ9QCbXukmzzLDk3dl > div:nth-child(2) > div > button > span.flex.items-center > span"
     );
 
-    if (nextEpisodeButton) {
+    if (nextEpisodeButton && toggleNextEpisodeD) {
       nextEpisodeButton.click();
     }
   };
@@ -26,7 +43,7 @@ window.addEventListener("load", () => {
       "#page-container > div > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div > div > div > div.qaO7HELxWiQoA0fHXJIqP > article > div._1pihWFM9H9JVRZN8Hkf4_X > div > div:nth-child(1) > div.sdn11PQTMwIKGrZxc00mj > div > div > a"
     );
 
-    if (nextEpisodeButton2) {
+    if (nextEpisodeButton2 && toggleNextEpisodeD) {
       nextEpisodeButton2.click();
     }
   };
@@ -35,6 +52,7 @@ window.addEventListener("load", () => {
     clickSkipIntroButton();
     clickNextEpisodeButton();
     clickNextEpisodeButton2();
+    clickSkipRecapButton();
   });
 
   observer.observe(document.body, {
@@ -45,4 +63,5 @@ window.addEventListener("load", () => {
   clickSkipIntroButton();
   clickNextEpisodeButton();
   clickNextEpisodeButton2();
+  clickSkipRecapButton();
 });

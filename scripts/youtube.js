@@ -1,4 +1,11 @@
 window.addEventListener("load", () => {
+
+  let toggleSkipAdY;
+
+  chrome.storage.sync.get(["toggleSkipAdY"], (data) => {
+    toggleSkipAdY = data.toggleSkipAdY;
+  });
+
   const clickSkipAdsButton = () => {
     const skipAdsButton = Array.from(document.querySelectorAll("button")).find(
       (button) => {
@@ -6,7 +13,7 @@ window.addEventListener("load", () => {
       }
     );
 
-    if (skipAdsButton) {
+    if (skipAdsButton && toggleSkipAdY) {
       skipAdsButton.click();
     }
   };
@@ -18,7 +25,7 @@ window.addEventListener("load", () => {
       }
     );
 
-    if (skipAdButton) {
+    if (skipAdButton && toggleSkipAdY) {
       skipAdButton.click();
     }
   };

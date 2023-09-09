@@ -1,0 +1,12 @@
+body{
+    background: #171717;
+    color: white;
+    height: 600px;
+    width: 200px;
+    font-size: medium;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+  }
+
