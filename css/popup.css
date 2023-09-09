@@ -7,8 +7,13 @@ body {
 }
 
 body::-webkit-scrollbar {
-    display: none;
+    background: #171717;
+    width: 10px;
 }
+::-webkit-scrollbar-thumb {
+    background: #d21f3c;
+}
+
 
 .image{
     text-align: center;

@@ -74,5 +74,8 @@ document.addEventListener("DOMContentLoaded", function () {
             toggleSkipAdY: toggleSkipAdY.checked,
 
         });
+
+        window.close();
+
     });
 });
