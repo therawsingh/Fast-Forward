@@ -1,6 +1,7 @@
 window.addEventListener("load", () => {
 
   let toggleNextEpisodeN, toggleSkipIntroN, toggleContinuieWatchingN, toggleSkipRecapN;
+  const currentURL = window.location.href;
 
   chrome.storage.sync.get(["toggleNextEpisodeN", "toggleSkipIntroN", "toggleContinuieWatchingN", "toggleSkipRecapN"], (data) => {
     toggleNextEpisodeN = data.toggleNextEpisodeN;
@@ -18,7 +19,7 @@ window.addEventListener("load", () => {
           return button.textContent === "Next Episode";
         });
 
-      if (nextButton && toggleNextEpisodeN) {
+      if (nextButton && toggleNextEpisodeN && currentURL.includes("watch")) {
         nextButton.click();
       }
     };
