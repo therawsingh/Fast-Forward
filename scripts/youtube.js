@@ -7,11 +7,12 @@ window.addEventListener("load", () => {
   });
 
   const clickSkipAdsButton = () => {
-    const skipAdsButton = Array.from(document.querySelectorAll("button")).find(
+    /*const skipAdsButton = Array.from(document.querySelectorAll("button")).find(
       (button) => {
         return button.textContent === "Skip Ads";
       }
-    );
+    );*/
+    const skipAdsButton = document.getElementById("skip-button:2");
 
     if (skipAdsButton && toggleSkipAdY) {
       skipAdsButton.click();
@@ -19,9 +20,9 @@ window.addEventListener("load", () => {
   };
 
   const clickSkipAdButton = () => {
-    const skipAdButton = Array.from(document.querySelectorAll("button")).find(
+    const skipAdButton = Array.from(document.querySelectorAll("div")).find(
       (button) => {
-        return button.textContent === "Skip Ad";
+        return button.textContent === "Skip";
       }
     );
 
@@ -42,4 +43,5 @@ window.addEventListener("load", () => {
 
   clickSkipAdsButton();
   clickSkipAdButton();
+  clickSkipAdButton2();
 });

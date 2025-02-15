@@ -1,19 +1,20 @@
 window.addEventListener("load", () => {
-
   let toggleSkipRecapD, toggleSkipIntroD, toggleNextEpisodeD;
 
-  chrome.storage.sync.get(["toggleSkipRecapD", "toggleSkipIntroD", "toggleNextEpisodeD"], (data) => {
-    toggleSkipRecapD = data.toggleSkipRecapD;
-    toggleSkipIntroD = data.toggleSkipIntroD;
-    toggleNextEpisodeD = data.toggleNextEpisodeD;
-  });
+  // Retrieve toggle settings from Chrome storage
+  chrome.storage.sync.get(
+    ["toggleSkipRecapD", "toggleSkipIntroD", "toggleNextEpisodeD"],
+    (data) => {
+      toggleSkipRecapD = data.toggleSkipRecapD;
+      toggleSkipIntroD = data.toggleSkipIntroD;
+      toggleNextEpisodeD = data.toggleNextEpisodeD;
+    }
+  );
 
   const clickSkipIntroButton = () => {
     const skipIntroButton = Array.from(
       document.querySelectorAll("button")
-    ).find((button) => {
-      return button.textContent === "Skip Intro";
-    });
+    ).find((button) => button.textContent === "Skip Intro");
 
     if (skipIntroButton && toggleSkipIntroD) {
       skipIntroButton.click();
@@ -21,7 +22,9 @@ window.addEventListener("load", () => {
   };
 
   const clickSkipRecapButton = () => {
-    const skipRecapButton = document.querySelector("#page-container > div > div:nth-child(1) > div:nth-child(1) > div._2SCTjm_Vu5PRTQlmfSP68c > div > div:nth-child(1) > div._1yXUbimyCTMGF9cUlMJN0k > div._17OcmvacBhtBIc8UlFWr44.hWMwKvUSl80u9L3r6hj7Z > div > button > span > span")
+    const skipRecapButton = document.querySelector(
+      "#page-container > div > div:nth-child(1) > div:nth-child(1) > div._2SCTjm_Vu5PRTQlmfSP68c > div > div:nth-child(1) > div._1yXUbimyCTMGF9cUlMJN0k > div._17OcmvacBhtBIc8UlFWr44.hWMwKvUSl80u9L3r6hj7Z > div > button > span > span"
+    );
 
     if (skipRecapButton && toggleSkipRecapD) {
       skipRecapButton.click();
@@ -29,12 +32,12 @@ window.addEventListener("load", () => {
   };
 
   const clickNextEpisodeButton = () => {
-    const nextEpisodeButton = document.querySelector(
-      "#page-container > div > div:nth-child(1) > div:nth-child(1) > div > div > div:nth-child(1) > div._1yXUbimyCTMGF9cUlMJN0k > div._17OcmvacBhtBIc8UlFWr44._3hNFbJ9QCbXukmzzLDk3dl > div:nth-child(2) > div > button > span.flex.items-center > span"
+    const nextButton = Array.from(document.querySelectorAll("span")).find(
+      (button) => button.textContent === "Next Episode"
     );
 
-    if (nextEpisodeButton && toggleNextEpisodeD) {
-      nextEpisodeButton.click();
+    if (nextButton && toggleNextEpisodeD) {
+      nextButton.click();
     }
   };
 
@@ -48,20 +51,16 @@ window.addEventListener("load", () => {
     }
   };
 
-  const observer = new MutationObserver(() => {
-    clickSkipIntroButton();
-    clickNextEpisodeButton();
-    clickNextEpisodeButton2();
-    clickSkipRecapButton();
-  });
-
-  observer.observe(document.body, {
-    childList: true,
-    subtree: true,
-  });
-
-  clickSkipIntroButton();
-  clickNextEpisodeButton();
-  clickNextEpisodeButton2();
-  clickSkipRecapButton();
+  // Run checks every 500ms
+  const intervalId = setInterval(() => {
+    try {
+      clickSkipIntroButton();
+      clickNextEpisodeButton();
+      clickNextEpisodeButton2();
+      clickSkipRecapButton();
+    } catch (error) {
+      console.error("Error during interval check:", error);
+      clearInterval(intervalId); // Stop the interval if something goes wrong
+    }
+  }, 5000); // Check every 500ms
 });

@@ -1,84 +1,72 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/css/popup.css" />
+  </head>
 
-<head>
-  <link rel="stylesheet" type="text/css" href="/css/popup.css">
-</head>
+  <body>
+    <div class="popup">
+      <div class="image">
+        <img src="BingeIt.png" alt="Logo" />
+      </div>
 
-<body>
-  <div class="popup">
-
-    <div class="image">
-      <img src="BingeIt.png" alt="Logo" />
-    </div>
-    
-    <div class="Neflix">
-      <h3>Netflix</h3>
-      <label>
-        <input type="checkbox" id="toggleNextEpisodeN"> Next Episode
-      </label>
-      <br />
-      <label>
-        <input type="checkbox" id="toggleSkipIntroN"> Skip Intro
-      </label>
-      <br />
-      <label>
-        <input type="checkbox" id="toggleContinuieWatchingN"> Continue Watching
-      </label>
-      <br />
-      <label>
-        <input type="checkbox" id="toggleSkipRecapN"> Skip Recap
-      </label>
-      <br />
-    </div>
-
-    <div class="Prime">
-      <h3>Prime</h3>
-      <label>
-        <input type="checkbox" id="toggleSkipP"> Skip
-      </label>
-      <br />
-      <label>
-        <input type="checkbox" id="toggleSkipIntroP"> Skip Intro
-      </label>
-      <br />
-      <label>
-        <input type="checkbox" id="toggleSkipRecapP"> Skip Recap
-      </label>
-      <br />
-      <label>
-        <input type="checkbox" id="toggleNextEpisodeP"> Next Episode
-      </label>
-      <br />
-    </div>
-
-    <div class="Hotstar">
-      <h3>Diesny+ Hotstar</h3>
-      <label>
-        <input type="checkbox" id="toggleNextEpisodeD"> Next Episode
-      </label>
-      <br />
-      <label>
-        <input type="checkbox" id="toggleSkipIntroD"> Skip Intro
-      </label>
-      <br />
-      <label>
-        <input type="checkbox" id="toggleSkipRecapD"> Skip Recap
-      </label>
-      <br />
-    </div>
-
-    <div class="Youtube">
-      <h3>Youtube</h3>
-      <label>
-        <input type="checkbox" id="toggleSkipAdY"> Skip Ad
+      <div class="Neflix">
+        <h3>Netflix</h3>
+        <label>
+          <input type="checkbox" id="toggleNextEpisodeN" /> Next Episode
+        </label>
         <br />
+        <label>
+          <input type="checkbox" id="toggleSkipIntroN" /> Skip Intro
+        </label>
+        <br />
+        <label>
+          <input type="checkbox" id="toggleContinuieWatchingN" /> Continue
+          Watching
+        </label>
+        <br />
+        <label>
+          <input type="checkbox" id="toggleSkipRecapN" /> Skip Recap
+        </label>
+        <br />
+      </div>
+
+      <div class="Prime">
+        <h3>Prime</h3>
+        <label> <input type="checkbox" id="toggleSkipP" /> Skip </label>
+        <br />
+        <label>
+          <input type="checkbox" id="toggleSkipIntroP" /> Skip Intro
+        </label>
+        <br />
+        <label>
+          <input type="checkbox" id="toggleSkipRecapP" /> Skip Recap
+        </label>
+        <br />
+        <label>
+          <input type="checkbox" id="toggleNextEpisodeP" /> Next Episode
+        </label>
+        <br />
+      </div>
+
+      <div class="Hotstar">
+        <h3>Diesny+ Hotstar</h3>
+        <label>
+          <input type="checkbox" id="toggleNextEpisodeD" /> Next Episode
+        </label>
+        <br />
+        <label>
+          <input type="checkbox" id="toggleSkipIntroD" /> Skip Intro
+        </label>
+        <br />
+        <label>
+          <input type="checkbox" id="toggleSkipRecapD" /> Skip Recap
+        </label>
+        <br />
+      </div>
+      <br />
+      <button id="applyChanges">Apply Changes</button>
+      <script src="popup.js"></script>
     </div>
-    <br />
-    <button id="applyChanges">Apply Changes</button>
-    <script src="popup.js"></script>
-  </div>
-
-</body>
-
+  </body>
 </html>

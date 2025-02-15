@@ -1,36 +1,28 @@
 {
   "manifest_version": 3,
   "name": "Binge It",
-  "description": "Binge Away on Netflix, Prime, Disney+ Hotstar, Youtube, Twitch (Auto clicks annoying buttons like Next Episode, Skip Recap etc.)",
+  "description": "Binge Away on Netflix, Prime, Disney+ Hotstar (Auto clicks annoying buttons like Next Episode, Skip Recap etc.)",
   "permissions": ["storage"],
-  "version": "1.0",
+  "version": "1.2",
   "icons": {
     "48": "BineItLogox48.png",
     "128": "BineItLogox128.png"
   },
   "action": {
-    "default_popup" :"popup.html"
+    "default_popup": "popup.html"
   },
   "content_scripts": [
     {
       "js": ["scripts/netflix.js"],
-      "matches": ["https://www.netflix.com/*"]
+      "matches": ["https://www.netflix.com/watch/*"]
     },
     {
       "js": ["scripts/prime.js"],
       "matches": ["https://www.primevideo.com/*"]
     },
     {
-      "js": ["scripts/youtube.js"],
-      "matches": ["https://www.youtube.com/*"]
-    },
-    {
       "js": ["scripts/disney.js"],
       "matches": ["https://www.hotstar.com/*"]
-    },
-    {
-      "js": ["scripts/twitch.js"],
-      "matches": ["https://www.twitch.tv/*"]
     }
   ]
 }

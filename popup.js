@@ -51,8 +51,6 @@ document.addEventListener("DOMContentLoaded", function () {
             toggleSkipAdY.checked = data.toggleSkipAdY;
         });
 
-    console.log("toggle values fetched");
-
     applyChangesButton.addEventListener("click", () => {
 
         chrome.storage.sync.set({
