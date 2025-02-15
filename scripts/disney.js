@@ -13,7 +13,7 @@ window.addEventListener("load", () => {
 
   const clickSkipIntroButton = () => {
     const skipIntroButton = Array.from(
-      document.querySelectorAll("button")
+      document.querySelectorAll("span")
     ).find((button) => button.textContent === "Skip Intro");
 
     if (skipIntroButton && toggleSkipIntroD) {
@@ -31,23 +31,25 @@ window.addEventListener("load", () => {
     }
   };
 
+  const clickSkipRecapButton2 = () => {
+    const skipRecapButton = Array.from(
+      document.querySelectorAll("span")
+    ).find((button) => button.textContent === "Skip Recap");
+
+    if (skipRecapButton && toggleSkipRecapD) {
+      skipRecapButton.click();
+    }
+  };
+
   const clickNextEpisodeButton = () => {
+    const path = window.location.pathname.toLowerCase();
+    const isValidPath = (path.includes('shows') || path.includes('movies')) && !path.includes('home');
     const nextButton = Array.from(document.querySelectorAll("span")).find(
       (button) => button.textContent === "Next Episode"
     );
 
-    if (nextButton && toggleNextEpisodeD) {
+    if (nextButton && toggleNextEpisodeD && isValidPath)  {
       nextButton.click();
-    }
-  };
-
-  const clickNextEpisodeButton2 = () => {
-    const nextEpisodeButton2 = document.querySelector(
-      "#page-container > div > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div > div > div > div.qaO7HELxWiQoA0fHXJIqP > article > div._1pihWFM9H9JVRZN8Hkf4_X > div > div:nth-child(1) > div.sdn11PQTMwIKGrZxc00mj > div > div > a"
-    );
-
-    if (nextEpisodeButton2 && toggleNextEpisodeD) {
-      nextEpisodeButton2.click();
     }
   };
 
@@ -56,11 +58,11 @@ window.addEventListener("load", () => {
     try {
       clickSkipIntroButton();
       clickNextEpisodeButton();
-      clickNextEpisodeButton2();
       clickSkipRecapButton();
+      clickSkipRecapButton2();
     } catch (error) {
       console.error("Error during interval check:", error);
       clearInterval(intervalId); // Stop the interval if something goes wrong
     }
-  }, 5000); // Check every 500ms
+  }, 1000); // Check every 500ms
 });
